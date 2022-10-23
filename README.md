@@ -10,4 +10,4 @@
 - [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university)
 - [kamranahmedse/developer roadmap](https://github.com/kamranahmedse/developer-roadmap)
 - [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning)
-- [Xtremilicious/project-learn](Xtremilicious/projectlearn-project-based-learning)
+- [Xtremilicious/project-learn](https://github.com/Xtremilicious/projectlearn-project-based-learning)
