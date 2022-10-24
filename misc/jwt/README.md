@@ -2,6 +2,11 @@
 
 Jwt (ジョット)
 
+## Links
+
+[Introduction](https://jwt.io/introduction)
+[Claim](https://www.rfc-editor.org/rfc/rfc7519#section-4.1)
+
 ## What is JSON Web Token?
 
 JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact
