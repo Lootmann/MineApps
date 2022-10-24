@@ -55,3 +55,29 @@ Here are some scenarios where JSON Web Tokens are useful:
 > なぜなら JWT は署名が行えるからです 例えば公開鍵暗号方式を利用するのであれば
 > 送信者が誰であるのかを確認することが出来ます それに加えて、header, payload を用いて
 > 署名を計算するときに、内容が改ざんされていないことを検証できます
+
+## What is the JSON Web Token structure?
+
+In its compact form, JSON Web Tokens consist of three parts separated
+by dots (.), which are
+
+- Header
+- Payload
+- Signature
+
+Therefore, a JWT typically looks like the following.
+
+`xxxxx.yyyyy.zzzz`
+
+### Header
+
+The header typically consists of two parts: the type of the token,
+which is JWT, and the signing algorithm being used,
+such as HMAC SHA256(HS256) or RSA.
+
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
