@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: grey;
+}
+
+body {
+  font-size: 30px;
+  margin: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.props {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.slide {
+  width: 50%;
+}
+
+main {
+  margin: 20px 0;
+}
+
+main > div {
+  padding: 10px;
+}
