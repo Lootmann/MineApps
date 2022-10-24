@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: grey;
+}
+
+#main {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin: 20px 0;
+
+  display: flex;
+  gap: 20px;
+}
+
+.form > input {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 5px;
+  border-radius: 10px;
+}
+
+.form > button {
+  font-size: 20px;
+  padding: 2px 5px;
+  border-radius: 10px;
+}
+
+.link-list {
+  background-color: dimgray;
+  margin: 10px 0;
+  padding: 10px 0 10px 35px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.link-list > ul > li {
+  font-size: 25px;
+}
+
+.link {
+  padding-left: 10px;
+}
+
+.error {
+  background-color: black;
+  color: red;
+  padding: 2px 10px;
+  font-size: 20px;
+}
