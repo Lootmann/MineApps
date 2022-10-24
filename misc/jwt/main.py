@@ -1,6 +1,6 @@
 import json
 
-from myjwt import header_encoded
+from myjwt import claim_encoded, header_encoded, jwt
 
 
 def get_json(filename: str):
@@ -9,10 +9,11 @@ def get_json(filename: str):
 
 
 def main():
-    filename = "./jsons/header.json"
-    json_file = get_json(filename)
-    header = header_encoded(json_file)
-    print(header)
+    header_json = get_json("./jsons/header.json")
+    claim_json = get_json("./jsons/claim.json")
+
+    signature = jwt(header_json, claim_json, "abcde")
+    print(signature)
 
 
 if __name__ == "__main__":
