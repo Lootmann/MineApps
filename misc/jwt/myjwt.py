@@ -2,48 +2,46 @@ import base64
 import hashlib
 import hmac
 import json
+from typing import Callable
 
 
-def header_encoded(header_json: dict) -> str:
-    """
-    header encode
-    remove whitespace and newline from json,
-    sorted dict key, and base64 encode with encoding=utf-9
-
-    :param header_json: json dict
-    :returns: base64 encoded string using utf-8
-
-    :raises keyError: this might raise error header json is not valid json.
-    """
-    json_string = json.dumps(header_json, separators=(",", ":"), sort_keys=True)
-    return base64.b64encode(json_string.encode("utf-8")).decode("utf-8")
+def to_base64(json_dict: dict) -> bytes:
+    data_bytes = json.dumps(json_dict, separators=(",", ":")).encode("utf-8")
+    encoded = base64.urlsafe_b64encode(data_bytes).strip(b"=")
+    return encoded
 
 
-def claim_encoded(claim_json: dict) -> str:
-    """
-    claim encoded
+def get_algorithm(header_json: dict) -> Callable:
+    if "alg" not in header_json:
+        raise ValueError("Header has NO alg")
 
-    same as header_encoded
-    claim do not need key sorted.
+    algorithm = header_json["alg"]
 
-    :param claim_json: json dict
-    :returns: base64 encoded string using utf-8
-    """
-    json_string = json.dumps(claim_json, separators=(",", ":"))
-    return base64.b64encode(json_string.encode("utf-8")).decode("utf-8").strip("=")
+    if algorithm == "HS256":
+        return hashlib.sha256
+
+    if algorithm == "HS512":
+        return hashlib.sha512
+
+    raise ValueError("Wrong algorithm")
 
 
-def jwt(header_json: dict, claim_json: dict, secret_key: str) -> str:
-    """
-    FIXME: not working correctly :^)
-    """
-    header = header_encoded(header_json)
-    claim = claim_encoded(claim_json)
+def to_signature(b64_header: bytes, b64_claim: bytes, secret_key: str, algorithm: Callable) -> str:
+    payload = b64_header + b"." + b64_claim
+    byte_secret = bytes(secret_key, "utf-8")
 
-    signature = hmac.new(
-        bytes(secret_key, "utf-8"),
-        bytes(header + "." + claim, "utf-8"),
-        hashlib.sha256,
-    ).hexdigest()
+    signature_bytes = base64.urlsafe_b64encode(
+        hmac.new(byte_secret, payload, algorithm).digest(),
+    )
 
-    return base64.b64encode(signature.encode("utf-8")).decode("utf-8")
+    return signature_bytes.decode("utf-8").rstrip("=")
+
+
+def jwt(header: dict, claim: dict, secret_key: str) -> str:
+    b64_header = to_base64(header)
+    b64_claim = to_base64(claim)
+    algorithm = get_algorithm(header)
+    signature = to_signature(b64_header, b64_claim, secret_key, algorithm=algorithm)
+
+    jwt = b64_header.decode() + "." + b64_claim.decode() + "." + signature
+    return jwt
