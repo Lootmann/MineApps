@@ -18,7 +18,7 @@ or a public/private key pair using `RSA` or `ECDSA`.
 > JSON Web Token とは RFC 7519 でオープン標準になっている、
 > 簡潔でかつ self-contianed な方法で JSON のオブジェクトの様に情報をセキュアに送信する企画です
 > この情報は 電子署名をされているため認証済みでかつ信用できる情報になります
-> JWTs は HMAC アルゴリズムを用いて暗号化されるか
+> JWTs は 秘密鍵をと HMAC アルゴリズムを用いて署名化されるか
 > RSA or ECDSA を使い 公開/秘密鍵のペアを用いて署名されます
 
 Although JWTs can be encrypted to also provide secrecy between parties,
