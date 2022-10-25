@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extracss %}
+  <link rel="stylesheet" href="{% static 'pages.css' %}">
+{% endblock %}
+
+{% block title %}
+  Plagiarism Detection
+{% endblock %}
+
+{% block main %}
+  <div class="wrapper">
+    <h1>Plagiarism Detection</h1>
+
+    <form action="" method="post" class="form">
+      {% csrf_token %}
+
+      <div class="field">
+        <label for="title" class="label">{{ form.title.label }}</label>
+        {{ form.title }}
+      </div>
+
+      <div class="field">
+        <label for="file" class="label">{{ form.file.label }}</label>
+        {{ form.file }}
+      </div>
+
+      <div class="field">
+        <input type="submit" value="Create">
+      </div>
+    </form>
+  </div>
+
+  <div class="wrapper">
+    <h1>File List</h1>
+
+    <table id="table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Document</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        {% for file in files %}
+          <td>{{ file.title }}</td>
+          <td>{{ file.file }}</td>
+        {% endfor %}
+      </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
