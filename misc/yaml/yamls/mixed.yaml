@@ -1,0 +1,11 @@
+a: 123
+b: hello world
+key:
+  - c:
+      - c1
+      - c2
+  - d
+  - e:
+      - e1
+      - e2
+      - e3
