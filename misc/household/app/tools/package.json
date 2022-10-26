@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "clean-css-cli": "^5.6.1",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1"
+  },
+  "name": "tools",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tailwindcss -i ../static/css/global.css -o ../static/dist/style.min.css --minify --watch"
+  }
+}
