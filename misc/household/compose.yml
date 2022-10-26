@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    working_dir: /code
+    command: python3.10 manage.py runserver 0.0.0.0:8080
+    volumes:
+      - type: bind
+        source: ./app
+        target: /code
+    ports:
+      - published: 8080
+        target: 8080
+    depends_on:
+      db:
+        condition: service_started
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    volumes:
+      - type: volume
+        source: psql-household-db
+        target: /var/lib/postgresql/data
+    ports:
+      - published: 5432
+        target: 5432
+    env_file: ./db/.env
+
+volumes:
+  psql-household-db:
