@@ -55,6 +55,12 @@ is to implement a classical encryption algorithm, the Vigenere Cipher to learn t
   - Action buttons - 'Encrypt' and 'Decrypt'
   - Resulting encrypted or decrypted message
 
+> - 以下の物が必要
+>   - input field
+>   - 暗号のキー
+>   - Encrypt, Decrypt ボタン
+>   - 出力
+
 - User can enter the text to be encrypted in the plain text message input field
 - User can enter the Encryption key the Vigenere algorithm will use to encrypt the plain text message.
 - User can click see see the 'Decrypt' button disabled until the plain text has been encrypted.
@@ -64,8 +70,19 @@ is to implement a classical encryption algorithm, the Vigenere Cipher to learn t
 - User can click the 'Decrypt' button to decrypt the encrypted message
   and to display its contents in the result field.
 
+> input field に 平文を入力して 暗号化する
+> 暗号キーを入力して　 Vigenere algorithm を利用して 平文を暗号にする
+> Decrypt ボタンを押して暗号化する
+> Encrypt ボタンを押して復号する
+> 暗号したメッセージを結果画面に表示する
+> Decrypt ボタンを押して暗号化したメッセージを複合します
+> で表示
+
 ## Bonus features
 
 - User can see a 'Compare' button after decryption that compares the original plain text message
   with the decrypted message
 - User can see an error message if the 'Compare' detects differences in the contents of these two fields.
+
+> Compare ボタンを押すと オリジナルの平文と復号した文章を比較する
+> どこが違うのかを表示して、エラーメッセージを出せ
