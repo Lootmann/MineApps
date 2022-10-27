@@ -1,7 +1,9 @@
 # app-ideas
 
-- Bin2Dec
-- Border Radius Previewer
-- Christmas Light
+- [x] Bin2Dec
+- [x] Border Radius Previewer
+- [x] Christmas Light
 
-- Vigenere Cipher
+- [x] Countdown Timer
+
+- [x] Vigenere Cipher

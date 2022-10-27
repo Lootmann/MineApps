@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: grey;
+}
+
+main {
+  padding: 20px 30px;
+  font-size: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#rest {
+  background-color: blanchedalmond;
+}
+
+#date {
+  font-size: 30px;
+}
+
+#start-timer {
+  font-size: 30px;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
