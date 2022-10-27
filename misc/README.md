@@ -6,6 +6,7 @@
 - [JWT](https://jwt.io/)
 - [yaml]()
 - [python context manager](https://docs.python.org/3/library/contextlib.html)
+- [Chrome Extension Custom]()
 
 ## Local Project
 
