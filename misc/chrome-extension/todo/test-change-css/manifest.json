@@ -1,0 +1,16 @@
+{
+  "name": "ThisIsMe",
+  "version": "1.0.1",
+  "manifest_version": 3,
+  "description": "My Chrome Extensions",
+  "content_scripts": [
+    {
+      "matches": ["http://*/", "https://*/"],
+      "js": ["./content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage", "tabs"]
+}

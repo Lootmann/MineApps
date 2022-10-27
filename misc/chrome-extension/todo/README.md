@@ -22,3 +22,8 @@ Google Chrome から
 3. パッケージ化されていない拡張機能を読み込む
 4. ディレクトリを指定
 5. :^)
+
+## Links
+
+https://dev.to/aussieguy/reading-files-in-a-chrome-extension--2c03
+https://developer.chrome.com/docs/extensions/reference/runtime/#method-getURL
