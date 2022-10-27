@@ -5,6 +5,7 @@
 - [RealPython SocketProgramming](https://realpython.com/python-sockets/)
 - [JWT](https://jwt.io/)
 - [yaml]()
+- [python context manager](https://docs.python.org/3/library/contextlib.html)
 
 ## Local Project
 
