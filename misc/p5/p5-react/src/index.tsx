@@ -7,7 +7,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/index.css";
 import { App } from "./components/App";
 import { ErrorPage } from "./components/ErrorPage";
-import { About } from "./components/About";
+
+import { Canvas } from "./components/Canvas";
+import { Circle } from "./scripts/test";
+import { Hoge } from "./scripts/hoge";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +19,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/about",
-        element: <About />,
+        path: "/test",
+        element: <Canvas sketch={Circle} />,
+      },
+      {
+        path: "/hoge",
+        element: <Canvas sketch={Hoge} />,
       },
     ],
   },

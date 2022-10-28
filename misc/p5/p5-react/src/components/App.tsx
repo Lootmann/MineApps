@@ -6,10 +6,12 @@ export function App() {
       <header id="header">
         <ul>
           <li>
-            <Link to={"/about"}>About</Link>
+            <Link to={"/test"}>Test</Link>
           </li>
-          <li>b</li>
-          <li>c</li>
+
+          <li>
+            <Link to={"/hoge"}>Hoge</Link>
+          </li>
         </ul>
       </header>
 
