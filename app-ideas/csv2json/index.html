@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>CSV TO Json</title>
+  </head>
+
+  <body>
+    <div>
+      <textarea
+        id="input"
+        name="file"
+        id="file"
+        cols="100"
+        rows="10"
+        placeholder="Input CSV or JSON"
+      ></textarea>
+    </div>
+
+    <div>
+      <textarea
+        id="result"
+        name="file"
+        id="file"
+        cols="100"
+        rows="10"
+        placeholder="Result"
+        readonly
+      ></textarea>
+    </div>
+
+    <div id="buttons">
+      <button id="csv2json">CSV to JSON</button>
+      <button id="json2csv">JSON to CSV</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
