@@ -9,6 +9,7 @@
 .todo {
   padding: 5px 10px;
   border-bottom: 1px solid var(--thin-gray);
+  font-size: 20px;
 
   list-style: none;
 }
@@ -16,6 +17,7 @@
 .addtodo {
   padding: 5px 10px;
   border-bottom: 1px solid var(--thin-gray);
+  font-size: 20px;
 
   list-style: none;
 }

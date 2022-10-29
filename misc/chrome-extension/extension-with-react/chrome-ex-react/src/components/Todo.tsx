@@ -5,8 +5,8 @@ import "../styles/todo.css";
 export function TodoList() {
   return (
     <ul className="todo-list">
-      <Todo />
       <AddTodo />
+      <Todo />
     </ul>
   );
 }
