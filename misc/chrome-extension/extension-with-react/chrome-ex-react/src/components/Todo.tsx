@@ -1,14 +1,19 @@
 import React from "react";
 
 import "../styles/todo.css";
-import { getTodo } from "../api/todo";
+import { getTodo, updateTodo } from "../api/todo";
 import { TodoModel } from "../model/todo";
 
 export function TodoList() {
-  const [todos, setTodos] = React.useState<TodoModel[]>(getTodo());
+  const [todos, setTodos] = React.useState<TodoModel[]>([]);
+
+  React.useEffect(() => {
+    setTodos(getTodo());
+  }, []);
 
   function addTodo(title: string) {
     setTodos([...todos, new TodoModel(todos.length.toString(), title)]);
+    updateTodo();
   }
 
   return (
@@ -19,11 +24,7 @@ export function TodoList() {
   );
 }
 
-type AddTodoProps = {
-  addTodo: (title: string) => void;
-};
-
-export function AddTodo(props: AddTodoProps) {
+export function AddTodo(props: { addTodo: (title: string) => void }) {
   const todoRef = React.useRef<HTMLInputElement>(null);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -56,11 +57,7 @@ export function AddTodo(props: AddTodoProps) {
   );
 }
 
-type TodoProps = {
-  todos: TodoModel[];
-};
-
-export function Todo(props: TodoProps) {
+export function Todo(props: { todos: TodoModel[] }) {
   return (
     <>
       {props.todos.map((todo) => {

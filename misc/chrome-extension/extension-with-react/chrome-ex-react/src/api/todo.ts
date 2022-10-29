@@ -10,21 +10,32 @@
 
 import { TodoModel } from "../model/todo";
 
-export function getTodo(): TodoModel[] {
-  // chrome.storage.sync.get(["todo"], function (todo) {
-  //   console.log(todo);
-  // });
-  return [
-    new TodoModel("1", "Why"),
-    new TodoModel("2", "Hello"),
-    new TodoModel("3", "Friend"),
-    new TodoModel("4", ":^)"),
-  ];
+function getTestTodo() {
+  return JSON.stringify([
+    new TodoModel("0", "Why"),
+    new TodoModel("1", "Hello"),
+    new TodoModel("2", "Friend"),
+    new TodoModel("3", ":^)"),
+  ]);
 }
 
-export function updateTodo(id: number) {
+export function getTodo(): TodoModel[] {
+  console.log(">>> getTodo");
+  const ls = localStorage.getItem("testKey");
+  console.log(`localStorage = ${ls}`);
+
+  const todos: TodoModel[] = [];
+
+  const json = JSON.parse(getTestTodo());
+  for (const obj of json) {
+    todos.push(new TodoModel(obj.id, obj.title));
+  }
+
+  return todos;
+}
+
+export function updateTodo() {
+  localStorage.setItem("testKey", "hoge");
+
   const json = JSON.stringify({ hello: "world" });
-  chrome.storage.sync.set({ todos: json }, function () {
-    console.log(`value is set to 1`);
-  });
 }
