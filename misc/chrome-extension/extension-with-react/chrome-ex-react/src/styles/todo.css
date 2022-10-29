@@ -1,4 +1,6 @@
 .todo-list {
+  padding: 10px 20px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -6,12 +8,14 @@
 
 .todo {
   padding: 5px 10px;
-  border: 1px solid black;
-  border-radius: 10px;
+  border-bottom: 1px solid var(--thin-gray);
+
+  list-style: none;
 }
 
 .addtodo {
   padding: 5px 10px;
-  border: 1px solid black;
-  border-radius: 10px;
+  border-bottom: 1px solid var(--thin-gray);
+
+  list-style: none;
 }
