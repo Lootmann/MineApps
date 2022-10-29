@@ -7,11 +7,27 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
-  background-color: grey;
+  background-color: var(--thin-gray);
 }
 
 #root {
-  width: 700px;
-  height: 500px;
+  min-width: 600px;
+  max-width: 650px;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+#wrapper {
+  height: 100%;
+
+  display: grid;
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 500px;
 }
