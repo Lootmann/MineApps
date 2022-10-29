@@ -27,13 +27,16 @@
   outline: none;
 }
 
-/* #add-form > input:focus {
-} */
-
 .todo {
   padding: 5px 10px;
   border-bottom: 1px solid var(--thin-gray);
   font-size: 20px;
 
   list-style: none;
+}
+
+.todo:hover {
+  background-color: var(--dark-gray);
+  border-radius: 10px;
+  transition: all 0.4s;
 }

@@ -1,13 +1,11 @@
-import React from "react";
-
 import { Sidebar } from "./Sidebar";
-import { Main } from "./Main";
+import { TodoList } from "./Todo";
 
 export function App() {
   return (
     <div id="wrapper">
       <Sidebar />
-      <Main />
+      <TodoList />
     </div>
   );
 }

@@ -1,23 +1,33 @@
 import React from "react";
 
+import "../styles/main.css";
 import "../styles/todo.css";
+
 import { getTodo, updateTodo } from "../api/todo";
 import { TodoModel } from "../model/todo";
 
 export function TodoList() {
   const [todos, setTodos] = React.useState<TodoModel[]>(getTodo());
 
+  React.useEffect(() => {
+    updateTodo(todos);
+  }, [todos]);
+
   function addTodo(title: string) {
-    const newTodos = [...todos, new TodoModel(todos.length.toString(), title)];
-    updateTodo(newTodos);
-    setTodos(newTodos);
+    setTodos([...todos, new TodoModel(todos.length.toString(), title)]);
+  }
+
+  function deleteTodo(todoId: string) {
+    setTodos((prevTodo) => prevTodo.filter((todo) => todo.id !== todoId));
   }
 
   return (
-    <ul className="todo-list">
-      <AddTodo addTodo={addTodo} />
-      <Todo todos={todos} />
-    </ul>
+    <main id="main">
+      <ul className="todo-list">
+        <AddTodo addTodo={addTodo} />
+        <Todo todos={todos} deleteTodo={deleteTodo} />
+      </ul>
+    </main>
   );
 }
 
@@ -54,12 +64,23 @@ export function AddTodo(props: { addTodo: (title: string) => void }) {
   );
 }
 
-export function Todo(props: { todos: TodoModel[] }) {
+export function Todo(props: {
+  todos: TodoModel[];
+  deleteTodo: (todoId: string) => void;
+}) {
+  function deleteTodo(todoId: string) {
+    props.deleteTodo(todoId);
+  }
+
   return (
     <>
       {props.todos.map((todo) => {
         return (
-          <li className="todo" key={todo.id}>
+          <li
+            className="todo"
+            key={todo.id}
+            onClick={() => deleteTodo(todo.id)}
+          >
             {todo.title}
           </li>
         );
