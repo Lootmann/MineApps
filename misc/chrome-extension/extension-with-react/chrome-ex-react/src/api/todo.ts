@@ -8,10 +8,18 @@
  * convert JSON to array(Todo[])
  */
 
-export function getTodo() {
-  chrome.storage.sync.get(["todo"], function (todo) {
-    console.log(todo);
-  });
+import { TodoModel } from "../model/todo";
+
+export function getTodo(): TodoModel[] {
+  // chrome.storage.sync.get(["todo"], function (todo) {
+  //   console.log(todo);
+  // });
+  return [
+    new TodoModel("1", "Why"),
+    new TodoModel("2", "Hello"),
+    new TodoModel("3", "Friend"),
+    new TodoModel("4", ":^)"),
+  ];
 }
 
 export function updateTodo(id: number) {

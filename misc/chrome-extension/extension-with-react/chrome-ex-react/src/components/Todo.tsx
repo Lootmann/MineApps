@@ -1,23 +1,38 @@
 import React from "react";
 
 import "../styles/todo.css";
+import { getTodo } from "../api/todo";
+import { TodoModel } from "../model/todo";
 
 export function TodoList() {
-  const [todos, setTodos] = React.useState<string[]>(["prev", "todo", "next"]);
+  const [todos, setTodos] = React.useState<TodoModel[]>(getTodo());
+
+  function addTodo(title: string) {
+    setTodos([...todos, new TodoModel(todos.length.toString(), title)]);
+  }
 
   return (
     <ul className="todo-list">
-      <AddTodo />
+      <AddTodo addTodo={addTodo} />
       <Todo todos={todos} />
     </ul>
   );
 }
 
-export function AddTodo() {
-  const todoRef = React.useRef(null);
+type AddTodoProps = {
+  addTodo: (title: string) => void;
+};
+
+export function AddTodo(props: AddTodoProps) {
+  const todoRef = React.useRef<HTMLInputElement>(null);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (todoRef.current === null) return;
+    if (todoRef.current.value === null) return;
+    props.addTodo(todoRef.current.value);
+    todoRef.current.value = "";
   }
 
   return (
@@ -42,7 +57,7 @@ export function AddTodo() {
 }
 
 type TodoProps = {
-  todos: string[];
+  todos: TodoModel[];
 };
 
 export function Todo(props: TodoProps) {
@@ -50,8 +65,8 @@ export function Todo(props: TodoProps) {
     <>
       {props.todos.map((todo) => {
         return (
-          <li className="todo" key={todo}>
-            {todo}
+          <li className="todo" key={todo.id}>
+            {todo.title}
           </li>
         );
       })}
