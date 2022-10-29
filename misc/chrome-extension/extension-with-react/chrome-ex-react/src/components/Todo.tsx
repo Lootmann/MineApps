@@ -5,15 +5,12 @@ import { getTodo, updateTodo } from "../api/todo";
 import { TodoModel } from "../model/todo";
 
 export function TodoList() {
-  const [todos, setTodos] = React.useState<TodoModel[]>([]);
-
-  React.useEffect(() => {
-    setTodos(getTodo());
-  }, []);
+  const [todos, setTodos] = React.useState<TodoModel[]>(getTodo());
 
   function addTodo(title: string) {
-    setTodos([...todos, new TodoModel(todos.length.toString(), title)]);
-    updateTodo();
+    const newTodos = [...todos, new TodoModel(todos.length.toString(), title)];
+    updateTodo(newTodos);
+    setTodos(newTodos);
   }
 
   return (

@@ -10,32 +10,25 @@
 
 import { TodoModel } from "../model/todo";
 
-function getTestTodo() {
-  return JSON.stringify([
-    new TodoModel("0", "Why"),
-    new TodoModel("1", "Hello"),
-    new TodoModel("2", "Friend"),
-    new TodoModel("3", ":^)"),
-  ]);
-}
+const STORAGE_KEY = "todoStorage";
 
 export function getTodo(): TodoModel[] {
   console.log(">>> getTodo");
-  const ls = localStorage.getItem("testKey");
-  console.log(`localStorage = ${ls}`);
+  const storage = localStorage.getItem(STORAGE_KEY);
 
-  const todos: TodoModel[] = [];
-
-  const json = JSON.parse(getTestTodo());
-  for (const obj of json) {
-    todos.push(new TodoModel(obj.id, obj.title));
+  if (storage === null) {
+    return [];
   }
 
+  const todos: TodoModel[] = [];
+  for (const obj of JSON.parse(storage)) {
+    todos.push(new TodoModel(obj.id, obj.title));
+  }
   return todos;
 }
 
-export function updateTodo() {
-  localStorage.setItem("testKey", "hoge");
-
-  const json = JSON.stringify({ hello: "world" });
+export function updateTodo(todos: TodoModel[]) {
+  console.log(">>> updated");
+  console.log(JSON.stringify(todos));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
 }
