@@ -6,7 +6,7 @@
   gap: 10px;
 }
 
-.todo {
+.addtodo {
   padding: 5px 10px;
   border-bottom: 1px solid var(--thin-gray);
   font-size: 20px;
@@ -14,7 +14,23 @@
   list-style: none;
 }
 
-.addtodo {
+#add-form {
+  display: inline;
+  width: 100%;
+}
+
+#add-form > input {
+  color: var(--white);
+  background-color: var(--black);
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+}
+
+/* #add-form > input:focus {
+} */
+
+.todo {
   padding: 5px 10px;
   border-bottom: 1px solid var(--thin-gray);
   font-size: 20px;
