@@ -35,8 +35,12 @@
   list-style: none;
 }
 
-.todo:hover {
-  background-color: var(--dark-gray);
-  border-radius: 10px;
-  transition: all 0.4s;
+.todo-checkbox {
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+.checkbox-circle:hover {
+  fill: var(--white);
+  transition: all 0.1s;
 }

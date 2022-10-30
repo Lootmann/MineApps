@@ -81,6 +81,16 @@ export function Todo(props: {
             key={todo.id}
             onClick={() => deleteTodo(todo.id)}
           >
+            <svg width="24" height="20" className="todo-checkbox">
+              <circle
+                cx="10"
+                cy="11"
+                r="8"
+                stroke="#f8f8f8"
+                fill="#2a2a2a"
+                className="checkbox-circle"
+              ></circle>
+            </svg>
             {todo.title}
           </li>
         );

@@ -29,5 +29,6 @@ export function getTodo(): TodoModel[] {
 
 export function updateTodo(todos: TodoModel[]) {
   console.log(">>> updateTodo");
+  localStorage.removeItem(STORAGE_KEY);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
 }
