@@ -1,0 +1,44 @@
+#board {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  gap: 5px;
+  width: 395px;
+  height: 395px;
+  padding: 5px;
+}
+
+.cell {
+  background-color: darkgreen;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  background-color: black;
+
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.white {
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  background-color: white;
+
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
