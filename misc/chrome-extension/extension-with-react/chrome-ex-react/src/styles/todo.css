@@ -35,6 +35,18 @@
   list-style: none;
 }
 
+.no-todo {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+  padding: 5px 10px;
+
+  color: var(--thin-gray);
+  font-size: 30px;
+
+  list-style: none;
+}
+
 .todo-checkbox {
   display: inline-block;
   transform: translateY(2px);

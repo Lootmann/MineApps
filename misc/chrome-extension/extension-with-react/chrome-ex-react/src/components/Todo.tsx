@@ -79,27 +79,37 @@ export function Todo(props: {
 
   return (
     <>
-      {props.todos.map((todo) => {
-        return (
-          <li
-            className="todo"
-            key={todo.id}
-            onClick={() => deleteTodo(todo.id)}
-          >
-            <svg width="24" height="20" className="todo-checkbox">
-              <circle
-                cx="10"
-                cy="11"
-                r="8"
-                stroke="#f8f8f8"
-                fill="#2a2a2a"
-                className="checkbox-circle"
-              ></circle>
-            </svg>
-            {ParseTitle(todo.title, todo.id)}
-          </li>
-        );
-      })}
+      {props.todos.length === 0 ? (
+        <li className="no-todo" key="0">
+          No Todo Here!
+          <br />
+          Great Work!
+          <br />
+          You can create new one :^)
+        </li>
+      ) : (
+        props.todos.map((todo) => {
+          return (
+            <li
+              className="todo"
+              key={todo.id}
+              onClick={() => deleteTodo(todo.id)}
+            >
+              <svg width="24" height="20" className="todo-checkbox">
+                <circle
+                  cx="10"
+                  cy="11"
+                  r="8"
+                  stroke="#f8f8f8"
+                  fill="#2a2a2a"
+                  className="checkbox-circle"
+                ></circle>
+              </svg>
+              {ParseTitle(todo.title, todo.id)}
+            </li>
+          );
+        })
+      )}
     </>
   );
 }
