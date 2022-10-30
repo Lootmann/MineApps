@@ -60,7 +60,7 @@ export function AddTodo(props: { addTodo: (title: string) => void }) {
           type="text"
           name="todo"
           id="todo"
-          placeholder="input new todo :^)"
+          placeholder="  input new todo :^)"
           ref={todoRef}
           autoFocus
         />
