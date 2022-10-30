@@ -8,6 +8,7 @@
 - [python context manager](https://docs.python.org/3/library/contextlib.html)
 - [Chrome Extension Custom](https://developer.chrome.com/docs/extensions/mv3/)
 - [P5.js](https://p5js.org/)
+- Ocello with React (Stupid AI)
 
 ### Chrome Extension Custom
 
