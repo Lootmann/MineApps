@@ -9,3 +9,5 @@
 - [x] CSV2JSON App
 
 - [x] Vigenere Cipher
+
+- [x] Focus Reader
