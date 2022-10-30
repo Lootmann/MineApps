@@ -6,19 +6,12 @@
 - [JWT](https://jwt.io/)
 - [yaml]()
 - [python context manager](https://docs.python.org/3/library/contextlib.html)
-- [Chrome Extension Custom]()
+- [Chrome Extension Custom](https://developer.chrome.com/docs/extensions/mv3/)
 - [P5.js](https://p5js.org/)
 
 ### Chrome Extension Custom
 
-- Tutorial
-
-  - [ChromeEx logrocket](https://blog.logrocket.com/creating-chrome-extension-react-typescript/)
-  - [Zenn with React](https://zenn.dev/ulcttku/articles/creating-chrome-extensions-with-react)
-
-- Reference
-
-  - [ChromeEx SaveData](https://developer.chrome.com/docs/extensions/reference/storage/)
+意外と簡単にできる
 
 ## Local Project
 
