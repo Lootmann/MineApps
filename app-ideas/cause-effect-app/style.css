@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: grey;
+}
+
+#main {
+  padding: 20px;
+}
+
+#person-list {
+  border: 1px solid black;
+}
+
+.ul {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.li {
+  margin: 10px 0;
+  list-style: none;
+}
+
+#show-info {
+  border: 1px solid black;
+  height: 70px;
+}
