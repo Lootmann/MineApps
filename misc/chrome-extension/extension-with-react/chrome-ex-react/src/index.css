@@ -9,7 +9,11 @@
 
 html,
 body,
-#root {
-  height: 100%;
+#root,
+#main {
+  min-width: 600px;
+  max-width: 650px;
+  min-height: 530px;
+
   background-color: var(--thin-gray);
 }
