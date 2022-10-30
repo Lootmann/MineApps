@@ -14,10 +14,15 @@ export function TodoList() {
   }, [todos]);
 
   function addTodo(title: string) {
-    setTodos([...todos, new TodoModel(todos.length.toString(), title)]);
+    const maxTodoId = todos.reduce(
+      (op, item) => (op = op > item.id ? op : item.id),
+      0
+    );
+    console.log(maxTodoId);
+    setTodos([...todos, new TodoModel(maxTodoId + 1, title)]);
   }
 
-  function deleteTodo(todoId: string) {
+  function deleteTodo(todoId: number) {
     setTodos((prevTodo) => prevTodo.filter((todo) => todo.id !== todoId));
   }
 
@@ -66,9 +71,9 @@ export function AddTodo(props: { addTodo: (title: string) => void }) {
 
 export function Todo(props: {
   todos: TodoModel[];
-  deleteTodo: (todoId: string) => void;
+  deleteTodo: (todoId: number) => void;
 }) {
-  function deleteTodo(todoId: string) {
+  function deleteTodo(todoId: number) {
     props.deleteTodo(todoId);
   }
 

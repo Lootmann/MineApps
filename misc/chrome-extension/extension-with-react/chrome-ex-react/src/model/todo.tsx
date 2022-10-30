@@ -1,8 +1,8 @@
 export class TodoModel {
-  id: string;
+  id: number;
   title: string;
 
-  constructor(id: string, title: string) {
+  constructor(id: number, title: string) {
     this.id = id;
     this.title = title;
   }
@@ -14,7 +14,7 @@ export class TodoModel {
  * when TodoModel.title has 'http://*' or https://*',
  * convert string to <a> tag links
  */
-export function ParseTitle(title: string, todoId: string): React.ReactNode {
+export function ParseTitle(title: string, todoId: number): React.ReactNode {
   const result = [];
 
   for (const chunk of title.split(" ")) {
