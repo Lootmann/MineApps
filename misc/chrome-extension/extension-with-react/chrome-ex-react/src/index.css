@@ -8,26 +8,8 @@
 }
 
 html,
-body {
-  height: 100%;
-}
-
-html {
-  background-color: var(--thin-gray);
-}
-
+body,
 #root {
-  min-width: 600px;
-  max-width: 650px;
-  min-height: 500px;
-  max-height: 500px;
-}
-
-#wrapper {
   height: 100%;
-
-  display: grid;
-  grid-template-areas: "sidebar main";
-  grid-template-columns: 120px 1fr;
-  grid-template-rows: 500px;
+  background-color: var(--thin-gray);
 }

@@ -4,7 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./styles/variables.css";
 import "./index.css";
-import { App } from "./components/App";
+import { TodoList } from "./components/Todo";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App />
+    <TodoList />
   </React.StrictMode>
 );
 

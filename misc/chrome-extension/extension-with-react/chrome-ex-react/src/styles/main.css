@@ -1,5 +1,9 @@
 #main {
-  grid-area: main;
+  min-width: 600px;
+  max-width: 650px;
+  min-height: 500px;
+  max-height: 500px;
+
   padding: 5px 10px;
 
   background-color: var(--black);
