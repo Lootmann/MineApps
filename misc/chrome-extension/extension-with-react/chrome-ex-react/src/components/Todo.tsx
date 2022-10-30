@@ -4,7 +4,7 @@ import "../styles/main.css";
 import "../styles/todo.css";
 
 import { getTodo, updateTodo } from "../api/todo";
-import { TodoModel } from "../model/todo";
+import { ParseTitle, TodoModel } from "../model/todo";
 
 export function TodoList() {
   const [todos, setTodos] = React.useState<TodoModel[]>(getTodo());
@@ -91,7 +91,7 @@ export function Todo(props: {
                 className="checkbox-circle"
               ></circle>
             </svg>
-            {todo.title}
+            {ParseTitle(todo.title, todo.id)}
           </li>
         );
       })}
