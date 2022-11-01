@@ -3,12 +3,13 @@
 ## Links
 
 - [RealPython SocketProgramming](https://realpython.com/python-sockets/)
-- [JWT](https://jwt.io/)
+- [x] [JWT](https://jwt.io/)
 - [yaml]()
-- [python context manager](https://docs.python.org/3/library/contextlib.html)
-- [Chrome Extension Custom](https://developer.chrome.com/docs/extensions/mv3/)
+- [x] [python context manager](https://docs.python.org/3/library/contextlib.html)
+- [x] [Chrome Extension Custom](https://developer.chrome.com/docs/extensions/mv3/)
 - [P5.js](https://p5js.org/)
 - Ocello with React (Stupid AI)
+- [x] [base64encoding, decoding](https://en.wikipedia.org/wiki/Base64)
 
 ### Chrome Extension Custom
 
