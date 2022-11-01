@@ -25,7 +25,7 @@ export const searchToggleCell = (
   const toLeftIdxs = currentToLeft(idx, size, mineCell, enemyCell, board);
   const toRightIdxs = currentToRight(idx, size, mineCell, enemyCell, board);
 
-  // TODO: horizontal
+  // TODO: diagonal
   // impl current to top-right
   // impl current to bottom-left
   // impl current to top-left
