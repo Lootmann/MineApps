@@ -7,4 +7,4 @@ in:
 
 .PHONY: test
 test:
-	pytest -sv
+	pytest -svv
