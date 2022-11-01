@@ -11,11 +11,11 @@ down:
 
 .PHONY: test
 test:
-	docker compose exec app python3.10 manage.py test
+	docker compose exec app python3.10 -m pytest -svv
 
 .PHONY: watch
 watch:
-	docker compose exec app /bin/bash && cd /code/tools && npm run watch
+	cd ./app/tools/ && yarn watch
 
 .PHONY: login
 login:
