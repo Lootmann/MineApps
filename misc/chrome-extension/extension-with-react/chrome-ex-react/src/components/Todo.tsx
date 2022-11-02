@@ -90,12 +90,13 @@ export function Todo(props: {
       ) : (
         props.todos.map((todo) => {
           return (
-            <li
-              className="todo"
-              key={todo.id}
-              onClick={() => deleteTodo(todo.id)}
-            >
-              <svg width="24" height="20" className="todo-checkbox">
+            <li className="todo" key={todo.id}>
+              <svg
+                width="24"
+                height="20"
+                className="todo-checkbox"
+                onClick={() => deleteTodo(todo.id)}
+              >
                 <circle
                   cx="10"
                   cy="11"
