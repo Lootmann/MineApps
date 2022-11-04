@@ -7,6 +7,7 @@
 - [x] Cause Effect App
 - [x] Countdown Timer
 - [x] CSV2JSON App
+- [x] Dollars to Cents
 
 - [x] Vigenere Cipher
 
