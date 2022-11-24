@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # custom app
     "categories.apps.CategoriesConfig",
+    "households.apps.HouseholdsConfig",
     "pages.apps.PagesConfig",
 ]
 
