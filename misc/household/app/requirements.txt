@@ -12,5 +12,6 @@ psycopg2-binary==2.9.5
 pyparsing==3.0.9
 pytest==7.2.0
 pytest-django==4.5.2
+PyYAML==6.0
 sqlparse==0.4.3
 tomli==2.0.1

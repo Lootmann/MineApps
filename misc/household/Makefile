@@ -24,3 +24,7 @@ login:
 .PHONY: logs
 logs:
 	docker compose logs -ft
+
+.PHONY: dump
+dump:
+	docker compose exec app python3.10 manage.py dumpdata --format=yaml > ./dumps/data.yaml
