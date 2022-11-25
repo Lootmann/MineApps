@@ -30,3 +30,10 @@ class Household:
   created_at = models.DateTimeField(auto_now_add=True)
   # updated_at = models.DateTimeField(auto_add=True) # don't need ?
 ```
+
+## Todo
+
+- 統計データを出力
+  - Views: Statistics or pages/index.html
+  - その月の各CategoryTypeの総計、一日あたりの平均
+  - データが存在する全月の総合計、一日あたりの平均
