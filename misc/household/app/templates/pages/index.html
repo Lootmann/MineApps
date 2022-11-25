@@ -7,5 +7,27 @@
 {% block main %}
   <h1 class="text-3xl">Hello World</h1>
 
-  <p class="text-2xl">pages/index.html</p>
+  <table class="table-auto mt-4">
+    <thead>
+    <tr>
+      <th class="px-4 py-2">Category</th>
+      <th class="px-4 py-2">Cost</th>
+      <th class="px-4 py-2">Description</th>
+      <th class="px-4 py-2">Registered At</th>
+      <th class="px-4 py-2">Created At</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for household in households %}
+      <tr>
+        <td class="px-4 py-2 font-medium">{{ household.category }}</td>
+        <td class="px-4 py-2 font-medium">{{ household.cost }}</td>
+        <td class="px-4 py-2 font-medium">{{ household.description }}</td>
+        <td class="px-4 py-2 font-medium">{{ household.registered_at }}</td>
+        <td class="px-4 py-2 font-medium">{{ household.created_at }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

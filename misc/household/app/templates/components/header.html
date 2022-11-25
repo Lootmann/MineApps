@@ -1,0 +1,10 @@
+{% load static %}
+
+{% block extracss %}
+  <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
+{% endblock %}
+
+<header id="header" class="bg-slate-400 text-2xl p-4 flex gap-x-4">
+  <a href="{% url 'pages:index' %}" class="hover:bg-slate-700 hover:text-slate-100 rounded-md px-2">Pages:Index</a>
+  <a href="{% url 'households:create' %}" class="hover:bg-slate-700 hover:text-slate-100 rounded-md px-2">HouseHolds:create</a>
+</header>

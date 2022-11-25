@@ -7,10 +7,14 @@
 
   <link rel="stylesheet" href="{% static 'dist/style.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% block  extracss %} {% endblock %}
+
   <title>{% block title %} {% endblock %}</title>
 </head>
 
 <body>
+{% include "components/header.html" %}
+
 <main class="p-4">
   {% block main %} {% endblock %}
 </main>

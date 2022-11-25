@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,6 +22,8 @@ INSTALLED_APPS = [
     "categories.apps.CategoriesConfig",
     "households.apps.HouseholdsConfig",
     "pages.apps.PagesConfig",
+    # third party
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [
