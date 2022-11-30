@@ -7,3 +7,4 @@ class PagesIndexView(generic.ListView):
     template_name = "pages/index.html"
     model = HouseHoldModel
     context_object_name = "households"
+    ordering = ("-registered_at",)
