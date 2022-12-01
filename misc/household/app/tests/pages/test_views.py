@@ -1,8 +1,9 @@
 import pytest
-from pytest_django import asserts
 from django.urls import reverse
+from pytest_django import asserts
 
 
+@pytest.mark.django_db
 class TestPagesIndexViews:
     @pytest.fixture(autouse=True)
     def initialize(self, client):

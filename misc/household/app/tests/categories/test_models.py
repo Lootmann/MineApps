@@ -1,4 +1,5 @@
 import pytest
+
 from categories.models import CategoryModel
 
 
