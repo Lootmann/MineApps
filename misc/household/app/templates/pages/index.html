@@ -7,27 +7,47 @@
 {% block main %}
   <h1 class="text-3xl">Hello World</h1>
 
-  <table class="table-auto mt-4">
-    <thead>
-    <tr>
-      <th class="px-4 py-2">Category</th>
-      <th class="px-4 py-2">Cost</th>
-      <th class="px-4 py-2">Description</th>
-      <th class="px-4 py-2">Registered At</th>
-      <th class="px-4 py-2">Created At</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    {% for household in households %}
+  <div class="flex-col content-center items-center self-center">
+    <table class="table-auto mt-4 bg-slate-400 rounded-md">
+      <thead>
       <tr>
-        <td class="px-4 py-2 font-medium">{{ household.category }}</td>
-        <td class="px-4 py-2 font-medium">{{ household.cost }}</td>
-        <td class="px-4 py-2 font-medium">{{ household.description }}</td>
-        <td class="px-4 py-2 font-medium">{{ household.registered_at }}</td>
-        <td class="px-4 py-2 font-medium">{{ household.created_at }}</td>
+        <th class="px-4 py-2">Category</th>
+        <th class="px-4 py-2">Cost</th>
+        <th class="px-4 py-2">Description</th>
+        <th class="px-4 py-2">Registered At</th>
+        <th class="px-4 py-2">Created At</th>
       </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+      {% for household in households %}
+        <tr>
+          <td class="px-4 py-2 font-medium">{{ household.category }}</td>
+          <td class="px-4 py-2 font-medium">{{ household.cost }}</td>
+          <td class="px-4 py-2 font-medium">{{ household.description }}</td>
+          <td class="px-4 py-2 font-medium">{{ household.registered_at }}</td>
+          <td class="px-4 py-2 font-medium">{{ household.created_at }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="pagination mt-4 text-2xl">
+      <span class="step-links px-2 py-1 rounded-md">
+        {% if page_obj.has_previous %}
+          <a href="?page=1" class="p-1 bg-slate-400 rounded-md">&laquo; first</a>
+          <a href="?page={{ page_obj.previous_page_number }}" class="p-1 bg-slate-300 rounded-md">previous</a>
+        {% endif %}
+
+        <span class="current font-bold">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}" class="p-1 bg-slate-300 rounded-md">next</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class="p-1 bg-slate-400 rounded-md">last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
+  </div>
 {% endblock %}

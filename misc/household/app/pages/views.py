@@ -8,3 +8,4 @@ class PagesIndexView(generic.ListView):
     model = HouseHoldModel
     context_object_name = "households"
     ordering = ("-registered_at",)
+    paginate_by = 15
