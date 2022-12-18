@@ -18,5 +18,4 @@ class TestPagesIndexViews:
         asserts.assertTemplateUsed(self.response, "pages/index.html")
 
     def test_contains(self):
-        asserts.assertContains(self.response, "Hello World")
-        asserts.assertContains(self.response, "pages/index.html")
+        asserts.assertContains(self.response, "HouseHolds:index")
