@@ -11,7 +11,7 @@ down:
 
 .PHONY: test
 test:
-	docker compose exec app python3.10 -m pytest -vv
+	docker compose exec app python3.10 -m pytest -svv
 
 .PHONY: watch
 watch:
