@@ -20,3 +20,14 @@ class HouseholdsCreateForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         self.fields["registered_at"].widget = DatetimeLocalInput()
+
+
+class HouseholdUpdateForm(forms.ModelForm):
+    class Meta:
+        model = HouseHoldModel
+        fields = ("category", "cost", "description", "registered_at")
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields["registered_at"].widget = DatetimeLocalInput()
