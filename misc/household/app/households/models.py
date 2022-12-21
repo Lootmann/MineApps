@@ -1,6 +1,7 @@
-from categories.models import CategoryModel
-from django.utils import timezone
 from django.db import models
+from django.utils import timezone
+
+from categories.models import CategoryModel
 
 
 class HouseHoldModel(models.Model):
