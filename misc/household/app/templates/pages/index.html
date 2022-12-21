@@ -28,7 +28,11 @@
         <tbody>
         {% for household in households %}
           <tr>
-            <td class="px-4 py-2 font-medium">{{ household.category }}</td>
+            <td class="px-4 py-2 font-medium">
+              <a href="{% url 'households:update' household.id %}">
+                {{ household.category }}
+              </a>
+            </td>
             <td class="px-4 py-2 font-medium">{{ household.cost }}</td>
             <td class="px-4 py-2 font-medium">{{ household.description }}</td>
             <td class="px-4 py-2 font-medium">{{ household.registered_at }}</td>
