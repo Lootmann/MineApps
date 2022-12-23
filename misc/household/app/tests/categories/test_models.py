@@ -25,3 +25,9 @@ class TestCategoryModel:
 
         assert category_type_name == "I"
         assert category_model.get_category_type_fullname(category_type_name) == "Income"
+
+    def test_get_category_type_fullname_raises_error(self):
+        category_model = CategoryModel.objects.filter(name="Salary").first()
+
+        with pytest.raises(ValueError):
+            category_model.get_category_type_fullname("Z")
