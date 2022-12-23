@@ -27,7 +27,7 @@ class TestHouseHoldsUpdateViewGet:
         asserts.assertTemplateUsed(self.response, "households/update.html")
 
     def test_contains(self):
-        asserts.assertContains(self.response, "[E] Hospital")
+        asserts.assertContains(self.response, "[Expense] Hospital")
         asserts.assertContains(self.response, "1200")
         asserts.assertContains(self.response, "Dentist")
 
