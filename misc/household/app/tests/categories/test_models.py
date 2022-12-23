@@ -18,3 +18,10 @@ class TestCategoryModel:
         category_model = CategoryModel.objects.filter(name="Salary").first()
         assert category_model.name == "Salary"
         assert category_model.category_type == "I"
+
+    def test_get_category_type_fullname(self):
+        category_model = CategoryModel.objects.filter(name="Salary").first()
+        category_type_name = category_model.category_type
+
+        assert category_type_name == "I"
+        assert category_model.get_category_type_fullname(category_type_name) == "Income"
