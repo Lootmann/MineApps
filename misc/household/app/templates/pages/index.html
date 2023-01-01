@@ -65,19 +65,64 @@
     <div class="p-4">
       <h2 class="text-2xl bg-gray-400 px-2 rounded-md">Aggregations</h2>
 
-      <div class="text-xl mt-3 rounded-md">
-        <h3>Total Cost</h3>
+      <div class="flex flex-row content-center self-center gap-x-4">
+        <div class="text-xl mt-3 rounded-md">
+          <h3>Total Cost</h3>
+          <table class="table-auto bg-slate-400 mt-3 rounded-md">
+            <thead>
+            {% for aggregate in household_aggregates %}
+              <tr>
+                <th class="px-2 py-1">{{ aggregate.category__name }}</th>
+                <td class="px-2 py-1">{{ aggregate.total_cost }}</td>
+              </tr>
+            {% endfor %}
+            </thead>
+          </table>
+        </div>
+      </div>
 
-        <table class="table-auto bg-slate-400 mt-3 rounded-md">
-          <thead>
-          {% for aggregate in household_aggregates %}
-            <tr>
-              <th class="px-2 py-1">{{ aggregate.category__name }}</th>
-              <td class="px-2 py-1">{{ aggregate.total_cost }}</td>
-            </tr>
-          {% endfor %}
-          </thead>
-        </table>
+      <div class="flex flex-row content-center self-center gap-x-4">
+        <div class="text-xl mt-3 rounded-md">
+          <h3>Two Month Ago</h3>
+          <table class="table-auto bg-slate-400 mt-3 rounded-md">
+            <thead>
+            {% for aggregate in two_month %}
+              <tr>
+                <th class="px-2 py-1">{{ aggregate.category__name }}</th>
+                <td class="px-2 py-1">{{ aggregate.total_cost }}</td>
+              </tr>
+            {% endfor %}
+            </thead>
+          </table>
+        </div>
+
+        <div class="text-xl mt-3 rounded-md">
+          <h3>Last Month</h3>
+          <table class="table-auto bg-slate-400 mt-3 rounded-md">
+            <thead>
+            {% for aggregate in last_month %}
+              <tr>
+                <th class="px-2 py-1">{{ aggregate.category__name }}</th>
+                <td class="px-2 py-1">{{ aggregate.total_cost }}</td>
+              </tr>
+            {% endfor %}
+            </thead>
+          </table>
+        </div>
+
+        <div class="text-xl mt-3 rounded-md">
+          <h3>This Month</h3>
+          <table class="table-auto bg-slate-400 mt-3 rounded-md">
+            <thead>
+            {% for aggregate in this_month %}
+              <tr>
+                <th class="px-2 py-1">{{ aggregate.category__name }}</th>
+                <td class="px-2 py-1">{{ aggregate.total_cost }}</td>
+              </tr>
+            {% endfor %}
+            </thead>
+          </table>
+        </div>
       </div>
     </div>
   </div>
